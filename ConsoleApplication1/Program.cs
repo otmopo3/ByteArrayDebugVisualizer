@@ -10,7 +10,7 @@ namespace ConsoleApplication1
 		static void Main(string[] args)
 		{
 			byte[] myArray = Encoding.UTF8.GetBytes("Привет? kag dela?");
-			DebuggerSide.TestShowVisualizer(myArray);
+			ByteArrayDebugVisualizer.TestShowVisualizer(myArray);
 		}
 	}
 }

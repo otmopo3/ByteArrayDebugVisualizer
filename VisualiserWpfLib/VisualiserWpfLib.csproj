@@ -31,6 +31,16 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release-MC|AnyCPU'">
+    <OutputPath>C:\Users\Aleksey\Documents\Visual Studio 2015\Visualizers\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.DebuggerVisualizers, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -71,7 +81,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DebuggerSide.cs" />
+    <Compile Include="ByteArrayDebugVisualizer.cs" />
+    <Compile Include="ExceptionVisualizerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExceptionVisualizerForm.Designer.cs">
+      <DependentUpon>ExceptionVisualizerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -87,6 +103,9 @@
     </Compile>
     <EmbeddedResource Include="ArrayVisualizerForm.resx">
       <DependentUpon>ArrayVisualizerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExceptionVisualizerForm.resx">
+      <DependentUpon>ExceptionVisualizerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
